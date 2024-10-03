@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     dataLayer: unknown[];
+    gtag: (e: 'event', v: string) => void;
   }
 }
 
@@ -9,7 +10,6 @@ type Payload = {
   limit: 1 | 0;
   limit_sum: number;
   insurance: 1 | 0;
-  email: 1 | 0;
 };
 
 export const sendDataToGA = async (payload: Payload) => {
@@ -20,7 +20,7 @@ export const sendDataToGA = async (payload: Payload) => {
     }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 
     await fetch(
-      'https://script.google.com/macros/s/AKfycby5o6NHvbauTAj8l86WU7W7V8JuXwTtnUAFPlo5ZPWsoEQXsk3I8MaBpkia6uoNT0RW/exec',
+      'https://script.google.com/macros/s/AKfycbwizP6wR6oPhxzFzr-K-k_9zfaa7epDfLt7ggqsfNN6MKhFLfpHbG49YBm13E3sKzg6vg/exec',
       {
         redirect: 'follow',
         method: 'POST',

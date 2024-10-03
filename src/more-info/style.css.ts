@@ -18,7 +18,17 @@ const row = style({
   gap: '.5rem',
 });
 
+const box = style({
+  display: 'flex',
+  padding: '1rem',
+  flexDirection: 'column',
+  gap: '1rem',
+  borderRadius: '1rem',
+  backgroundColor: '#F3F4F5',
+});
+
 export const miSt = {
   imgBox,
   row,
+  box,
 };
